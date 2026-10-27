@@ -1,0 +1,36 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  n15_synth.ys — Kịch bản tổng hợp Yosys cho debounce_n15 (N tối đa 15)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# 1. Đọc mã nguồn Verilog của module đối chiếu 4-bit
+read_verilog src/debounce_n15.v
+
+# 2. Kiểm tra cây phân cấp và chỉ rõ module đỉnh
+hierarchy -check -top debounce_n15
+
+# 3. Chuyển đổi khối always thành cấu trúc netlist nội bộ
+proc
+
+# 4. Tối ưu hóa cơ bản
+opt
+
+# 5. Nhận diện và tối ưu máy trạng thái FSM
+fsm
+opt
+
+# 6. Xử lý bộ nhớ (nếu có)
+memory
+opt
+
+# 7. Ánh xạ sang cổng logic cơ bản
+techmap
+opt
+
+# 8. Dọn dẹp dây và ô không dùng
+clean
+
+# 9. In thống kê số lượng ô chuẩn và flip-flop
+stat
+
+# 10. Ghi netlist sau tổng hợp ra file
+write_verilog synth/netlist/n15_synth.v

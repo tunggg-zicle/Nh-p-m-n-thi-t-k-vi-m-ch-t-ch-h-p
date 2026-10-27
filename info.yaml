@@ -1,0 +1,49 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  EEE703128 — Bài kiểm tra số 2 · thông tin dự án
+#  Đề tài: F06 — FSM chống rung phím có tham số thời gian
+# ─────────────────────────────────────────────────────────────────────────────
+project:
+  title:        "F06 — FSM chống rung phím có tham số thời gian"
+  author:       "Sinh viên 24101349"
+  discord:      ""
+  description:  "FSM debounce loc nhieu phim bam co tham so thoi gian N dat duoc luc chay"
+  language:     "Verilog"
+  clock_hz:     100000000        # 100 MHz (chu kỳ 10 ns)
+
+  # Kích thước ô: 1x1 tile
+  tiles: "1x1"
+
+  # Tên module khớp đúng trong src/project.v
+  top_module: "tt_um_eee703128_24101349"
+
+  source_files:
+    - "project.v"
+
+# ── Đặt tên chân theo cột Giao diện của đề tài F06 ───────────────────────────
+pinout:
+  ui[0]: "N[0] - Tham so thoi gian bit 0"
+  ui[1]: "N[1] - Tham so thoi gian bit 1"
+  ui[2]: "N[2] - Tham so thoi gian bit 2"
+  ui[3]: "N[3] - Tham so thoi gian bit 3"
+  ui[4]: "N[4] - Tham so thoi gian bit 4"
+  ui[5]: "N[5] - Tham so thoi gian bit 5"
+  ui[6]: "N[6] - Tham so thoi gian bit 6"
+  ui[7]: "N[7] - Tham so thoi gian bit 7"
+
+  uo[0]: "debounced - Muc da loc nhieu"
+  uo[1]: "pulse_rise - Xung suon len 1 chu ky"
+  uo[2]: "pulse_fall - Xung suon xuong 1 chu ky"
+  uo[3]: ""
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
+
+  uio[0]: "btn_raw - Tin hieu nut bam tho"
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
